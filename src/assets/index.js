@@ -3,5 +3,6 @@ import cv_landing_page from "./images/cv_landing_page.png";
 import cv_carousel_1 from "./images/cv_carousel_1.jpg";
 import cv_carousel_2 from "./images/cv_carousel_2.jpg";
 import cv_carousel_3 from "./images/cv_carousel_3.png";
+import land_job from "./images/land_job2.jpg";
 
-export { banner_image, cv_landing_page, cv_carousel_1, cv_carousel_2, cv_carousel_3 };
+export { banner_image, cv_landing_page, cv_carousel_1, cv_carousel_2, cv_carousel_3, land_job };
