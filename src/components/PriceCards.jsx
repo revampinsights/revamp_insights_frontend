@@ -4,9 +4,9 @@ import { prices } from "../constants";
 
 const PriceCards = () => {
   return (
-    <div className="h-auto flex flex-row gap-[10vw] py-[10vh]">
+    <div className="h-auto flex flex-row gap-8 py-[10vh]">
       {prices.map((price) => (
-        <div key={price.id} className="flex flex-col text-left px-[2vw] py-[6vh] gap-3 bg-white border-[1px] shadow-md rounded-md">
+        <div key={price.id} className="flex flex-col text-left px-[4vw] py-[6vh] gap-3 bg-white border-[1px] shadow-md rounded-md">
           <h1 className="font-medium text-[14px]">{price.title}</h1>
           <h1 className="font-bold text-[20px]">{price.cost}</h1>
           <div className="text-xs pb-[1vh]"><Button>Use This Template</Button></div>

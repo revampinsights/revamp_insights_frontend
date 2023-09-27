@@ -6,12 +6,12 @@ import { Fragment } from 'react';
 
 const Base = () => {
     return (
-        <Fragment>
+        <div className='overflow-y-hidden'>
             <ScrollToTop />
             <Header />
                 <Outlet />
             <Footer />
-        </Fragment>
+        </div>
     );
 };
 

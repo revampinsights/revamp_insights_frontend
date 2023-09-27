@@ -8,8 +8,6 @@ import { BsStarFill } from 'react-icons/bs';
 import { PriceCards } from "../../components/PriceCards";
 
 
-
-
 const Carousel = () => {
     const settings = {
       className: "center",
