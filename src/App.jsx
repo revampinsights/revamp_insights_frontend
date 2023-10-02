@@ -3,6 +3,7 @@ import Base from './views/Base/Base';
 import Login from './views/Login/Login';
 import SignUp from './views/SignUp/SignUp'
 import PasswordReset from './views/PasswordReset/PasswordReset'
+import ForgotPassword from './views/ForgotPassword/ForgotPassword'
 import LandingPage from './views/LandingPage/LandingPage'
 import Jobs from './views/Jobs/Jobs'
 import AboutUs from './views/AboutUs/AboutUs'
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
     {
       path: 'password-reset',
       element: <PasswordReset />
+    },
+    {
+      path: 'forgot-password',
+      element: <ForgotPassword />
     },
 ]);
 
