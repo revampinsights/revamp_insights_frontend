@@ -1,8 +1,8 @@
 import Button from "../../components/Button/Button";
 import Post from "../../components/Post";
 
-import { posts } from "../../constants";
-import { categories } from "../../constants";
+import { posts, categories, trendingTags } from "../../constants";
+
 
 const RecentPost = () => {
   return (
@@ -41,10 +41,22 @@ const RecentPost = () => {
 
 const Categories = () => {
   return (
-    <div>
+    <div className="w-[100%] h-auto flex flex-col gap-3">
       {categories.map((category) => (
-        <div key={category.id} className="w-[100%] h-auto flex flex-col text-white bg-[#0959FE] rounded-[10px] border-[1px] py-3 pl-5 mb-3">
+        <div key={category.id} className=" text-white bg-[#0959FE] rounded-[10px] border-[1px] py-3 pl-5">
           <p className="text-[14px]">{category.title}</p>
+        </div>
+      ))}
+    </div>
+  )
+};
+
+const TrendingTags = () => {
+  return (
+    <div className="w-[100%] h-auto flex flex-row flex-wrap gap-3">
+      {trendingTags.map((tag) => (
+        <div key={tag.id} className="bg-white text-black  border-[2px] border-white drop-shadow-md shadow-lg py-3 px-6 rounded-[50px]">
+          <p className="text-center font-medium text-[13px]">{tag.title}</p>
         </div>
       ))}
     </div>
@@ -136,7 +148,7 @@ const Jobs = () => {
               <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
 
               <div className="">
-                
+                <TrendingTags/>
               </div>
             </div>
           </>
