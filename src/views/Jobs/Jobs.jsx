@@ -1,6 +1,35 @@
 import Button from "../../components/Button/Button";
 import Post from "../../components/Post";
 
+import { posts } from "../../constants";
+
+const RecentPost = () => {
+  return (
+    <div className="h-auto w-[100%]">
+      {posts.filter((filteredpost) => filteredpost.id <= 4).map((post) => (
+        <>
+        <div key={post.id} className="flex flex-row gap-5 justify-center mb-[2%]">
+          <div className="w-[40%]">
+            <img
+              src={post.img}
+              alt="Post image"
+              className="h-[22vh] w-[100%] object-cover rounded-[5px]"
+            />
+          </div>
+          <div className="w-[60%]">
+          <h1 className="font-medium text-[13px] pb-[3%]">
+            {post.title}
+          </h1>
+          <p className="text-[12px] leading-[20px] justify-items-stretch">{"\""}{[...post.desc].slice(0, 133)} {"...\""}</p>
+        </div>
+        </div>
+        <div className="w-[100%] bg-[#e1e4e9] h-[1.5px] mb-[1.5vh]"></div>
+        </>
+      ))}
+    </div>
+  );
+};
+
 const Jobs = () => {
   return (
     <div className="h-auto w-[100vw] flex flex-col pb-[10vh]">
@@ -54,16 +83,20 @@ const Jobs = () => {
         </div>
       </div>
 
-      <main className="h-auto w-[100vw] flex flex-row gap-3 py-[10vh] px-[10vw]">
-        <div className="w-2/3">
+      <main className="h-auto w-[100vw] flex flex-row gap-[5%] py-[10vh] px-[10vw]">
+        <div className="w-3/5">
           <h1 className="font-medium text-[18px]">Recommended post</h1>
           <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
           <Post />
         </div>
 
-        <div className="w-1/3">
+        <div className="w-2/5">
           <h1 className="font-medium text-[18px]">Recent post</h1>
-          <div className="w-[40%] bg-black h-[1px]"></div>
+          <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+          <div className="">
+            <RecentPost/>
+          </div>
         </div>
       </main>
     </div>
