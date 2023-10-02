@@ -2,7 +2,7 @@ import Button from "../../components/Button/Button";
 import Post from "../../components/Post";
 
 import { posts, categories, trendingTags } from "../../constants";
-
+import FormInputField from "../../components/FormInputField/FormInputField";
 
 const RecentPost = () => {
   return (
@@ -149,6 +149,17 @@ const Jobs = () => {
 
               <div className="">
                 <TrendingTags/>
+              </div>
+            </div>
+
+            <div className="py-[3%]">
+              <h1 className="font-medium text-[18px] py-[2%]">Newsletter</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                <FormInputField placeholder="Enter your Email"/>
+                <Button className="w-[100%]">Subscribe</Button>
+                
               </div>
             </div>
           </>

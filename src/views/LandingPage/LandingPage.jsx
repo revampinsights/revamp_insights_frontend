@@ -1,6 +1,5 @@
 import Button from "../../components/Button/Button";
-import { banner_image, cv_carousel_1, cv_carousel_2, cv_carousel_3, land_job } from "../../assets";
-import { cv_landing_page } from "../../assets";
+import { cv_landing_page, banner_image, cv_carousel_1, cv_carousel_2, cv_carousel_3, land_job } from "../../assets";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
