@@ -143,4 +143,26 @@ const posts = [
   },
 ];
 
-export { prices, posts };
+const categories = [
+  {
+    id: 0,
+    title: "Career & Professional Development",
+  },
+  {
+    id: 1,
+    title: "Revamped CV",
+  },
+  {
+    id: 3,
+    title: "Study & Work Abroad",
+  },
+  {
+    id: 4,
+    title: "Study Abroad",
+  },
+  {
+    id: 5,
+    title: "Uncategorized",
+  },
+]
+export { prices, posts, categories };

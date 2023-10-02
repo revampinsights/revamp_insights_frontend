@@ -2,33 +2,54 @@ import Button from "../../components/Button/Button";
 import Post from "../../components/Post";
 
 import { posts } from "../../constants";
+import { categories } from "../../constants";
 
 const RecentPost = () => {
   return (
     <div className="h-auto w-[100%]">
-      {posts.filter((filteredpost) => filteredpost.id <= 4).map((post) => (
-        <>
-        <div key={post.id} className="flex flex-row gap-5 justify-center mb-[2%]">
-          <div className="w-[40%]">
-            <img
-              src={post.img}
-              alt="Post image"
-              className="h-[22vh] w-[100%] object-cover rounded-[5px]"
-            />
-          </div>
-          <div className="w-[60%]">
-          <h1 className="font-medium text-[13px] pb-[3%]">
-            {post.title}
-          </h1>
-          <p className="text-[12px] leading-[20px] justify-items-stretch">{"\""}{[...post.desc].slice(0, 133)} {"...\""}</p>
-        </div>
-        </div>
-        <div className="w-[100%] bg-[#e1e4e9] h-[1.5px] mb-[1.5vh]"></div>
-        </>
-      ))}
+      {posts
+        .filter((filteredpost) => filteredpost.id <= 4)
+        .map((post) => (
+          <>
+            <div
+              key={post.id}
+              className="flex flex-row gap-5 justify-center mb-[2%]"
+            >
+              <div className="w-[40%]">
+                <img
+                  src={post.img}
+                  alt="Post image"
+                  className="h-[22vh] w-[100%] object-cover rounded-[5px]"
+                />
+              </div>
+              <div className="w-[60%]">
+                <h1 className="font-medium text-[13px] pb-[3%]">
+                  {post.title}
+                </h1>
+                <p className="text-[12px] leading-[20px] justify-items-stretch">
+                  {'"'}
+                  {[...post.desc].slice(0, 133)} {'..."'}
+                </p>
+              </div>
+            </div>
+            <div className="w-[100%] bg-[#e1e4e9] h-[1.5px] mb-[1.5vh]"></div>
+          </>
+        ))}
     </div>
   );
 };
+
+const Categories = () => {
+  return (
+    <div>
+      {categories.map((category) => (
+        <div key={category.id} className="w-[100%] h-auto flex flex-col text-white bg-[#0959FE] rounded-[10px] border-[1px] py-3 pl-5 mb-3">
+          <p className="text-[14px]">{category.title}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 const Jobs = () => {
   return (
@@ -91,12 +112,34 @@ const Jobs = () => {
         </div>
 
         <div className="w-2/5">
-          <h1 className="font-medium text-[18px]">Recent post</h1>
-          <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+          <>
+            <div>
+              <h1 className="font-medium text-[18px]">Recent post</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
 
-          <div className="">
-            <RecentPost/>
-          </div>
+              <div className="">
+                <RecentPost />
+              </div>
+            </div>
+
+            <div className="py-[3%]">
+              <h1 className="font-medium text-[18px] py-[2%]">Categories</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                <Categories/>
+              </div>
+            </div>
+
+            <div className="py-[3%]">
+              <h1 className="font-medium text-[18px] py-[2%]">Trending Tags</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                
+              </div>
+            </div>
+          </>
         </div>
       </main>
     </div>
