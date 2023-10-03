@@ -132,14 +132,22 @@ const Jobs = () => {
             </div>
 
             <div>
+              
+
+              <div className="py-[10%] flex flex-row flex-wrap gap-5">
+                <p className="border-[1px] font-bold text-[#0959FE] border-[#0959FE] rounded-[3px] px-4 py-2">01</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">02</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">03</p>
+                <p className="font-bold text-[30px] text-gray-400 tracking-wide text-center">...</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">06</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">Next</p>
+              </div>
+
               <h1 className="font-medium text-[18px] py-[2%]">Leave a Reply</h1>
               <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
 
               <div>
                 <form>
-                  <label className="block mb-2 text-sm font-medium dark:text-black">
-                    Your message
-                  </label>
                   <textarea
                     id="message"
                     rows="9"
@@ -150,12 +158,20 @@ const Jobs = () => {
               </div>
 
               <div className="w-[100%] h-auto flex flex-row gap-5">
-                <FormInputField placeholder="Name" className="pr-[40%]" label="Name"/>
-                <FormInputField placeholder="Email" className="pr-[40%]" label="Email" />
+                <FormInputField
+                  placeholder="Name"
+                  className="pr-[40%]"
+                  label="Name"
+                />
+                <FormInputField
+                  placeholder="Email"
+                  className="pr-[40%]"
+                  label="Email"
+                />
               </div>
 
-<div className="w-[100%] my-[5%]">
-              <Button className=" w-[30%]">Subscribe</Button>
+              <div className="w-[100%] my-[5%]">
+                <Button className=" w-[30%]">Subscribe</Button>
               </div>
             </div>
           </>
