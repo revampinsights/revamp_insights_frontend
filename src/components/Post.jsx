@@ -1,6 +1,8 @@
 import { posts } from "../constants";
 import Button from "./Button/Button";
 
+
+
 const Post = () => {
   return (
     <div className="h-auto w-[100%]">
@@ -10,7 +12,7 @@ const Post = () => {
             <img
               src={post.img}
               alt="Post image"
-              className="h-[65vh] w-[100%]"
+              className="h-[68vh] w-[100%] object-cover rounded-[5px]"
             />
           </div>
           <h1 className="font-medium text-[20px] pt-[6vh] pb-[2%]">

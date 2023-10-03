@@ -143,4 +143,177 @@ const posts = [
   },
 ];
 
-export { prices, posts };
+const categories = [
+  {
+    id: 0,
+    title: "Career & Professional Development",
+  },
+  {
+    id: 1,
+    title: "Revamped CV",
+  },
+  {
+    id: 3,
+    title: "Study & Work Abroad",
+  },
+  {
+    id: 4,
+    title: "Study Abroad",
+  },
+  {
+    id: 5,
+    title: "Uncategorized",
+  },
+];
+
+const trendingTags = [
+  {
+    id: 0,
+    title: "21 Century",
+  },
+  {
+    id: 1,
+    title: "A9 Algorithm",
+  },
+  {
+    id: 2,
+    title: "Amazon",
+  },
+  {
+    id: 3,
+    title: "Blue Origin",
+  },
+  {
+    id: 4,
+    title: "Business",
+  },
+  {
+    id: 5,
+    title: "Cloud",
+  },
+  {
+    id: 6,
+    title: "CV",
+  },
+  {
+    id: 7,
+    title: "Cover Letter",
+  },
+  {
+    id: 8,
+    title: "Colleagues",
+  },
+  {
+    id: 9,
+    title: "Criitical Thinking",
+  },
+  {
+    id: 10,
+    title: "Crime",
+  },
+  {
+    id: 11,
+    title: "Cloud",
+  },
+  {
+    id: 12,
+    title: "Employment",
+  },
+  {
+    id: 13,
+    title: "DevOps",
+  },
+  {
+    id: 14,
+    title: "Employment in Nigeria",
+  },
+  {
+    id: 15,
+    title: "Entrepreneur",
+  },
+  {
+    id: 16,
+    title: "Forbes",
+  },
+  {
+    id: 17,
+    title: "Fraud",
+  },
+  {
+    id: 18,
+    title: "Job Hunting",
+  },
+  {
+    id: 19,
+    title: "Holiday",
+  },
+  {
+    id: 20,
+    title: "International Students",
+  },
+  {
+    id: 21,
+    title: "Interview",
+  },
+  {
+    id: 22,
+    title: "Interview",
+  },
+  {
+    id: 23,
+    title: "Leave",
+  },
+  {
+    id: 24,
+    title: "Job Scam",
+  },
+  {
+    id: 25,
+    title: "Leadership",
+  },
+  {
+    id: 26,
+    title: "Vacation",
+  },
+  {
+    id: 27,
+    title: "Programming",
+  },
+  {
+    id: 28,
+    title: "Remote Jobs",
+  },
+  {
+    id: 29,
+    title: "Success",
+  },
+  {
+    id: 30,
+    title: "Richest Man Alive",
+  },
+  {
+    id: 31,
+    title: "Quit",
+  },
+  {
+    id: 32,
+    title: "Professional CV",
+  },
+  {
+    id: 33,
+    title: "Relax",
+  },
+  {
+    id: 34,
+    title: "Toxic",
+  },
+  {
+    id: 35,
+    title: "Vacation",
+  },
+  {
+    id: 36,
+    title: "Work",
+  },
+];
+export { prices, posts, categories, trendingTags };

@@ -1,6 +1,74 @@
 import Button from "../../components/Button/Button";
 import Post from "../../components/Post";
 
+import { posts, categories, trendingTags } from "../../constants";
+import FormInputField from "../../components/FormInputField/FormInputField";
+
+const RecentPost = () => {
+  return (
+    <div className="h-auto w-[100%]">
+      {posts
+        .filter((filteredpost) => filteredpost.id <= 4)
+        .map((post) => (
+          <>
+            <div
+              key={post.id}
+              className="flex flex-row gap-5 justify-center mb-[2%]"
+            >
+              <div className="w-[40%]">
+                <img
+                  src={post.img}
+                  alt="Post image"
+                  className="h-[22vh] w-[100%] object-cover rounded-[5px]"
+                />
+              </div>
+              <div className="w-[60%]">
+                <h1 className="font-medium text-[13px] pb-[3%]">
+                  {post.title}
+                </h1>
+                <p className="text-[12px] leading-[20px] justify-items-stretch">
+                  {'"'}
+                  {[...post.desc].slice(0, 133)} {'..."'}
+                </p>
+              </div>
+            </div>
+            <div className="w-[100%] bg-[#e1e4e9] h-[1.5px] mb-[1.5vh]"></div>
+          </>
+        ))}
+    </div>
+  );
+};
+
+const Categories = () => {
+  return (
+    <div className="w-[100%] h-auto flex flex-col gap-3">
+      {categories.map((category) => (
+        <div
+          key={category.id}
+          className=" text-white bg-[#0959FE] rounded-[10px] border-[1px] py-3 pl-5"
+        >
+          <p className="text-[14px]">{category.title}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const TrendingTags = () => {
+  return (
+    <div className="w-[100%] h-auto flex flex-row flex-wrap gap-3">
+      {trendingTags.map((tag) => (
+        <div
+          key={tag.id}
+          className="bg-white text-black  border-[2px] border-white drop-shadow-md shadow-lg py-3 px-6 rounded-[50px]"
+        >
+          <p className="text-center font-medium text-[13px]">{tag.title}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const Jobs = () => {
   return (
     <div className="h-auto w-[100vw] flex flex-col pb-[10vh]">
@@ -54,16 +122,103 @@ const Jobs = () => {
         </div>
       </div>
 
-      <main className="h-auto w-[100vw] flex flex-row gap-3 py-[10vh] px-[10vw]">
-        <div className="w-2/3">
-          <h1 className="font-medium text-[18px]">Recommended post</h1>
-          <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
-          <Post />
+      <main className="h-auto w-[100vw] flex flex-row gap-[5%] py-[10vh] px-[10vw]">
+        <div className="w-3/5">
+          <>
+            <div>
+              <h1 className="font-medium text-[18px]">Recommended post</h1>
+              <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
+              <Post />
+            </div>
+
+            <div>
+              
+
+              <div className="py-[10%] flex flex-row flex-wrap gap-5">
+                <p className="border-[1px] font-bold text-[#0959FE] border-[#0959FE] rounded-[3px] px-4 py-2">01</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">02</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">03</p>
+                <p className="font-bold text-[30px] text-gray-400 tracking-wide text-center">...</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">06</p>
+                <p className="border-[1px] font-bold text-white bg-[#0959FE] border-[#0959FE] rounded-[3px] px-3 py-2">Next</p>
+              </div>
+
+              <h1 className="font-medium text-[18px] py-[2%]">Leave a Reply</h1>
+              <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div>
+                <form>
+                  <textarea
+                    id="message"
+                    rows="9"
+                    className="block p-2.5 w-full text-sm border-[1px] rounded-[10px] drop-shadow-sm shadow-sm bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Comment"
+                  ></textarea>
+                </form>
+              </div>
+
+              <div className="w-[100%] h-auto flex flex-row gap-5">
+                <FormInputField
+                  placeholder="Name"
+                  className="pr-[40%]"
+                  label="Name"
+                />
+                <FormInputField
+                  placeholder="Email"
+                  className="pr-[40%]"
+                  label="Email"
+                />
+              </div>
+
+              <div className="w-[100%] my-[5%]">
+                <Button className=" w-[30%]">Subscribe</Button>
+              </div>
+            </div>
+          </>
         </div>
 
-        <div className="w-1/3">
-          <h1 className="font-medium text-[18px]">Recent post</h1>
-          <div className="w-[40%] bg-black h-[1px]"></div>
+        <div className="w-2/5">
+          <>
+            <div>
+              <h1 className="font-medium text-[18px]">Recent post</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                <RecentPost />
+              </div>
+            </div>
+
+            <div className="py-[3%]">
+              <h1 className="font-medium text-[18px] py-[2%]">Categories</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                <Categories />
+              </div>
+            </div>
+
+            <div className="py-[3%]">
+              <h1 className="font-medium text-[18px] py-[2%]">Trending Tags</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                <TrendingTags />
+              </div>
+            </div>
+
+            <div className="py-[3%]">
+              <h1 className="font-medium text-[18px] py-[2%]">Newsletter</h1>
+              <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div className="">
+                <FormInputField
+                  placeholder="Your email address"
+                  className="outline-none drop-shadow-sm shadow-sm text-[14px]"
+                />
+                <Button className="w-[100%]">Subscribe</Button>
+              </div>
+            </div>
+          </>
         </div>
       </main>
     </div>

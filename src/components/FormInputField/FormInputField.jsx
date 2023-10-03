@@ -29,7 +29,7 @@ const FormInputField = ({
                     file:bg-blue-50 file:text-blue-700
                     hover:file:cursor-pointer hover:file:bg-amber-50
                     hover:file:text-amber-700 text-[#00071466]
-                "
+
       />
       {errors[name] && (
         <span className="text-red-500 pt-2">{errors[name].message}</span>
