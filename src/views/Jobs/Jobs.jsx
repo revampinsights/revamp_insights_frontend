@@ -43,25 +43,31 @@ const Categories = () => {
   return (
     <div className="w-[100%] h-auto flex flex-col gap-3">
       {categories.map((category) => (
-        <div key={category.id} className=" text-white bg-[#0959FE] rounded-[10px] border-[1px] py-3 pl-5">
+        <div
+          key={category.id}
+          className=" text-white bg-[#0959FE] rounded-[10px] border-[1px] py-3 pl-5"
+        >
           <p className="text-[14px]">{category.title}</p>
         </div>
       ))}
     </div>
-  )
+  );
 };
 
 const TrendingTags = () => {
   return (
     <div className="w-[100%] h-auto flex flex-row flex-wrap gap-3">
       {trendingTags.map((tag) => (
-        <div key={tag.id} className="bg-white text-black  border-[2px] border-white drop-shadow-md shadow-lg py-3 px-6 rounded-[50px]">
+        <div
+          key={tag.id}
+          className="bg-white text-black  border-[2px] border-white drop-shadow-md shadow-lg py-3 px-6 rounded-[50px]"
+        >
           <p className="text-center font-medium text-[13px]">{tag.title}</p>
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 const Jobs = () => {
   return (
@@ -118,9 +124,41 @@ const Jobs = () => {
 
       <main className="h-auto w-[100vw] flex flex-row gap-[5%] py-[10vh] px-[10vw]">
         <div className="w-3/5">
-          <h1 className="font-medium text-[18px]">Recommended post</h1>
-          <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
-          <Post />
+          <>
+            <div>
+              <h1 className="font-medium text-[18px]">Recommended post</h1>
+              <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
+              <Post />
+            </div>
+
+            <div>
+              <h1 className="font-medium text-[18px] py-[2%]">Leave a Reply</h1>
+              <div className="w-[50%] bg-black h-[1.5px] mb-[4vh]"></div>
+
+              <div>
+                <form>
+                  <label className="block mb-2 text-sm font-medium dark:text-black">
+                    Your message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="9"
+                    className="block p-2.5 w-full text-sm border-[1px] rounded-[10px] drop-shadow-sm shadow-sm bg-white border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Comment"
+                  ></textarea>
+                </form>
+              </div>
+
+              <div className="w-[100%] h-auto flex flex-row gap-5">
+                <FormInputField placeholder="Name" className="pr-[40%]" label="Name"/>
+                <FormInputField placeholder="Email" className="pr-[40%]" label="Email" />
+              </div>
+
+<div className="w-[100%] my-[5%]">
+              <Button className=" w-[30%]">Subscribe</Button>
+              </div>
+            </div>
+          </>
         </div>
 
         <div className="w-2/5">
@@ -139,7 +177,7 @@ const Jobs = () => {
               <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
 
               <div className="">
-                <Categories/>
+                <Categories />
               </div>
             </div>
 
@@ -148,7 +186,7 @@ const Jobs = () => {
               <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
 
               <div className="">
-                <TrendingTags/>
+                <TrendingTags />
               </div>
             </div>
 
@@ -157,9 +195,11 @@ const Jobs = () => {
               <div className="w-[40%] bg-black h-[1.5px] mb-[4vh]"></div>
 
               <div className="">
-                <FormInputField placeholder="Enter your Email"/>
+                <FormInputField
+                  placeholder="Your email address"
+                  className="outline-none drop-shadow-sm shadow-sm text-[14px]"
+                />
                 <Button className="w-[100%]">Subscribe</Button>
-                
               </div>
             </div>
           </>
