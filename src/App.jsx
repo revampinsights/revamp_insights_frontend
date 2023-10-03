@@ -1,14 +1,18 @@
+import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Base from './views/Base/Base';
-import Login from './views/Login/Login';
-import SignUp from './views/SignUp/SignUp'
-import PasswordReset from './views/PasswordReset/PasswordReset'
-import LandingPage from './views/LandingPage/LandingPage'
-import Jobs from './views/Jobs/Jobs'
-import AboutUs from './views/AboutUs/AboutUs'
-import ContactUs from './views/ContactUs/ContactUs'
-import Tests from './views/Tests/Tests';
-import Blog from  './views/Blog/Blog'
+
+
+const Base = lazy(() => import('./views/Base/Base'))
+const Login = lazy(() => import('./views/Login/Login'))
+const SignUp = lazy(() => import('./views/SignUp/SignUp'))
+const PasswordReset = lazy(() => import('./views/PasswordReset/PasswordReset'))
+const ForgotPassword = lazy(() => import('./views/ForgotPassword/ForgotPassword'))
+const LandingPage = lazy(() => import('./views/LandingPage/LandingPage'))
+const Jobs = lazy(() => import('./views/Jobs/Jobs'))
+const AboutUs = lazy(() => import('./views/AboutUs/AboutUs'))
+const ContactUs = lazy(() => import('./views/ContactUs/ContactUs'))
+const Tests = lazy(() => import('./views/Tests/Tests'))
+const Blog = lazy(() => import( './views/Blog/Blog'))
 
 const router = createBrowserRouter([
     {
@@ -52,6 +56,10 @@ const router = createBrowserRouter([
     {
       path: 'password-reset',
       element: <PasswordReset />
+    },
+    {
+      path: 'forgot-password',
+      element: <ForgotPassword />
     },
 ]);
 

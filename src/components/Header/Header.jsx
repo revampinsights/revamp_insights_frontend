@@ -57,7 +57,7 @@ const Header = () => {
                     </nav>
                 </div>
                 <div className="flex items-center gap-6">
-                    <Button>Get Started</Button>
+                    <Button onClick={() => window.location.href = '/login'}>Get Started</Button>
                     <i
                         onClick={toggleMenu}
                         className="fa-solid fa-bars-staggered z-10 cursor-pointer hover:opacity-70 text-3xl md:hidden"
